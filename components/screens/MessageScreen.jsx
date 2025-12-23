@@ -76,7 +76,7 @@ export default function MessageScreen({ onNext }) {
 
 Meri dua hai ki tum hamesha khush raho, apne sapne poore karo aur life ke har moment ko enjoy karo 🌷💫. Tum meri life ki blessing ho aur main hamesha grateful hoon ki meri elder sister tum jaisi amazing ho 🎂💛.
 
-Happy Birthday, Sabhya! 🥳🎉💖
+Happy Birthday, Sabhya didi! 🥳🎉💖
                     </p>
                     
                     <div className="flex flex-col space-y-3">
