@@ -72,13 +72,11 @@ export default function MessageScreen({ onNext }) {
                     style={{ transformOrigin: "center", backfaceVisibility: "hidden" }}
                 >
                     <p className="text-[#301733] text-sm md:text-base leading-relaxed max-h-[320px] overflow-y-auto pr-2 mb-6">
-                       💖 Happy Birthday, Anshika ✨
-You are truly one of the most precious gifts in my life 🎁. Talking to you 💬, seeing your smile 😊, and sharing laughter with you are moments I deeply cherish 🤍. Every little moment with you feels special 🌸.
-                        <br></br>
-                        You’re not just beautiful ✨, but your heart is pure and kind 🤍. Anyone who knows you can’t help but admire you 💞.
-                        <br></br>
-                        On your special day, I wish all your dreams come true, happiness always finds you, and every moment feels just right 🌷. You deserve all the joy this world has to offer.
-Always stay this magical ✨.
+                       Aaj ka din sirf tumhara nahi, meri zindagi ke ek special insaan ka din hai 💖. Tum sirf meri sister nahi, balki meri guide, meri inspiration aur meri sabse badi support ho 🌸. Tumhari smile aur positivity har situation ko light aur happy bana deti hai ✨.
+
+Meri dua hai ki tum hamesha khush raho, apne sapne poore karo aur life ke har moment ko enjoy karo 🌷💫. Tum meri life ki blessing ho aur main hamesha grateful hoon ki meri elder sister tum jaisi amazing ho 🎂💛.
+
+Happy Birthday, Sabhya! 🥳🎉💖
                     </p>
                     
                     <div className="flex flex-col space-y-3">
