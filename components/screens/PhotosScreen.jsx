@@ -34,7 +34,7 @@ export default function PhotosScreen({ onNext }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Our Memories 💖
+        Our Memories 🤍
       </motion.h1>
 
       <motion.div 
