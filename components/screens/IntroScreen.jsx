@@ -38,7 +38,7 @@ export default function IntroScreen({ onNext }) {
               Today!" />
           </h1>
           <p className="mt-4 text-xl text-pink-200 max-w-2xl mx-auto">
-            Yes,Sabhya, it's YOU! A little surprise awaits...
+            Yes,Sabhya didi, it's YOU! A little surprise awaits...
           </p>
         </div>
 
