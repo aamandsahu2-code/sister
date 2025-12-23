@@ -10,8 +10,6 @@ import GradientButton from "../GradientButton"
 import { ArrowRight } from "lucide-react"
 
 export default function PhotosScreen({ onNext }) {
-  const swiperRef = useRef(null)
-
   const memories = [
     "/memories/dost1.jpg",
     "/memories/dost2.jpg", 
@@ -21,13 +19,6 @@ export default function PhotosScreen({ onNext }) {
 
   return (
     <div className="px-4 md:px-6 py-10 text-center relative min-h-screen flex flex-col justify-center">
-      {/* Background glows */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute w-40 h-40 bg-pink-500/20 blur-3xl -top-10 left-6" />
-        <div className="absolute w-56 h-56 bg-fuchsia-500/25 blur-3xl bottom-0 right-4" />
-        <div className="absolute w-32 h-32 bg-violet-500/20 blur-3xl top-1/3 -left-10" />
-      </div>
-
       <motion.h1 
         className="text-4xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-transparent mb-12 drop-shadow-2xl leading-tight"
         initial={{ opacity: 0, y: 50 }}
@@ -48,20 +39,16 @@ export default function PhotosScreen({ onNext }) {
           modules={[EffectCards]}
           grabCursor={true}
           className="mySwiper h-96 md:h-[500px] lg:h-[600px]"
-          slidesPerView={1}
         >
           {memories.map((memory, index) => (
             <SwiperSlide key={index}>
-              <div className="flex items-center justify-center h-full p-6 md:p-10">
-                {/* PERFECT CORNER FRAME */}
-                <div className="w-full h-full max-w-3xl max-h-[85%] flex items-center justify-center bg-gradient-to-br from-white/5 to-transparent rounded-[30px] shadow-2xl border-[3px] border-white/15 overflow-hidden backdrop-blur-md">
-                  <img 
-                    src={memory}
-                    alt={`Memory ${index + 1}`}
-                    className="w-auto h-auto max-w-full max-h-full object-contain rounded-[24px] p-3 md:p-5 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.01]"
-                    loading="lazy"
-                  />
-                </div>
+              <div className="flex items-center justify-center h-full p-4 md:p-8">
+                <img 
+                  src={memory}
+                  alt={`Memory ${index + 1}`}
+                  className="w-auto h-auto max-w-full max-h-[95%] object-contain rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105"
+                  loading="lazy"
+                />
               </div>
             </SwiperSlide>
           ))}
