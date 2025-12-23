@@ -34,31 +34,34 @@ export default function PhotosScreen({ onNext }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        Our Memories 🤍
+        Our Memories 💖
       </motion.h1>
 
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="max-w-4xl mx-auto mb-12"  // ← WIDER CONTAINER
+        className="max-w-4xl mx-auto mb-12"
       >
         <Swiper
           effect={"cards"}
           modules={[EffectCards]}
           grabCursor={true}
-          className="mySwiper h-96 md:h-[500px] lg:h-[600px]"  // ← TALLER HEIGHT
+          className="mySwiper h-96 md:h-[500px] lg:h-[600px]"
           slidesPerView={1}
         >
           {memories.map((memory, index) => (
             <SwiperSlide key={index}>
               <div className="flex items-center justify-center h-full p-8 md:p-12">
-                <img 
-                  src={memory}
-                  alt={`Memory ${index + 1}`}
-                  className="w-auto h-auto max-w-full max-h-full object-contain !rounded-3xl shadow-2xl border-4 border-white/30 hover:border-white/50 hover:shadow-3xl transition-all duration-500 hover:scale-105"
-                  loading="lazy"
-                />
+                {/* IMAGE WRAPPER → CLEAN CORNERS */}
+                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-white/10 to-transparent rounded-3xl shadow-2xl border-4 border-white/20 overflow-hidden backdrop-blur-sm">
+                  <img 
+                    src={memory}
+                    alt={`Memory ${index + 1}`}
+                    className="w-auto h-auto max-w-full max-h-[90%] object-contain rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             </SwiperSlide>
           ))}
