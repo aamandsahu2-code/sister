@@ -52,13 +52,13 @@ export default function PhotosScreen({ onNext }) {
         >
           {memories.map((memory, index) => (
             <SwiperSlide key={index}>
-              <div className="flex items-center justify-center h-full p-8 md:p-12">
-                {/* IMAGE WRAPPER → CLEAN CORNERS */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-white/10 to-transparent rounded-3xl shadow-2xl border-4 border-white/20 overflow-hidden backdrop-blur-sm">
+              <div className="flex items-center justify-center h-full p-6 md:p-10">
+                {/* PERFECT CORNER FRAME */}
+                <div className="w-full h-full max-w-3xl max-h-[85%] flex items-center justify-center bg-gradient-to-br from-white/5 to-transparent rounded-[30px] shadow-2xl border-[3px] border-white/15 overflow-hidden backdrop-blur-md">
                   <img 
                     src={memory}
                     alt={`Memory ${index + 1}`}
-                    className="w-auto h-auto max-w-full max-h-[90%] object-contain rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]"
+                    className="w-auto h-auto max-w-full max-h-full object-contain rounded-[24px] p-3 md:p-5 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.01]"
                     loading="lazy"
                   />
                 </div>
