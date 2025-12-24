@@ -37,14 +37,14 @@ export default function PhotosScreen({ onNext }) {
           effect={"cards"}
           modules={[EffectCards]}
           grabCursor={true}
-          className="mySwiper h-80 md:h-96 lg:h-[500px] bg-transparent" // bg hataya
+          className="mySwiper h-80 md:h-96 lg:h-[500px] !bg-transparent"
         >
           {memories.map((memory, index) => (
             <SwiperSlide
               key={index}
-              className="bg-transparent" // slide bg bhi transparent
+              className="!bg-transparent !shadow-none"
             >
-              <div className="flex items-center justify-center h-full p-4 md:p-8 bg-transparent">
+              <div className="flex items-center justify-center h-full p-4 md:p-8">
                 <img
                   src={memory}
                   alt={`Memory ${index + 1}`}
