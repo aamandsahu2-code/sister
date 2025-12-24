@@ -1,6 +1,5 @@
 "use client"
 
-import { useRef } from "react"
 import { motion } from "framer-motion"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCards } from "swiper/modules"
@@ -12,14 +11,14 @@ import { ArrowRight } from "lucide-react"
 export default function PhotosScreen({ onNext }) {
   const memories = [
     "/memories/dost1.jpg",
-    "/memories/dost2.jpg", 
+    "/memories/dost2.jpg",
     "/memories/dost3.jpg",
-    "/memories/dost4.jpg"
+    "/memories/dost4.jpg",
   ]
 
   return (
     <div className="px-4 md:px-6 py-10 text-center relative min-h-screen flex flex-col justify-center">
-      <motion.h1 
+      <motion.h1
         className="text-4xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-transparent mb-12 drop-shadow-2xl leading-tight"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -28,7 +27,7 @@ export default function PhotosScreen({ onNext }) {
         Our Memories 💖
       </motion.h1>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
@@ -38,12 +37,15 @@ export default function PhotosScreen({ onNext }) {
           effect={"cards"}
           modules={[EffectCards]}
           grabCursor={true}
-          className="mySwiper h-80 md:h-96 lg:h-[500px]"
+          className="mySwiper h-80 md:h-96 lg:h-[500px] bg-transparent" // bg hataya
         >
           {memories.map((memory, index) => (
-            <SwiperSlide key={index}>
-              <div className="flex items-center justify-center h-full p-4 md:p-8">
-                <img 
+            <SwiperSlide
+              key={index}
+              className="bg-transparent" // slide bg bhi transparent
+            >
+              <div className="flex items-center justify-center h-full p-4 md:p-8 bg-transparent">
+                <img
                   src={memory}
                   alt={`Memory ${index + 1}`}
                   className="
