@@ -136,5 +136,15 @@ button { cursor: pointer; }
 .mySwiper .swiper-slide-shadow-left,
 .mySwiper .swiper-slide-shadow-right {
   display: none !important;   /* ✅ peeche ka dark layer hata diya */
+  .mySwiper .swiper-wrapper {
+  justify-content: center;          /* slides container center */
+}
+
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 }
 
