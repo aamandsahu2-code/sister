@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { EffectCards } from "swiper/modules"
 import "swiper/css"
-import "swiper/css/effect-cards"
 import GradientButton from "../GradientButton"
 import { ArrowRight } from "lucide-react"
 
@@ -28,47 +26,37 @@ export default function PhotosScreen({ onNext }) {
       </motion.h1>
 
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className="max-w-3xl mx-auto mb-12"
+        transition={{ duration: 0.7, delay: 0.2 }}
+        className="w-full flex justify-center mb-12"
       >
-        <Swiper
-          effect={"cards"}
-          modules={[EffectCards]}
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={1}
-          className="mySwiper h-80 md:h-96 lg:h-[500px] !bg-transparent"
-        >
-          {memories.map((memory, index) => (
-            <SwiperSlide
-              key={index}
-              className="!bg-transparent !flex !items-center !justify-center"
-            >
-              <div className="flex items-center justify-center h-full p-4 md:p-8">
+        <div className="w-full max-w-sm sm:max-w-md md:max-w-lg">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={16}
+            grabCursor={true}
+            className="w-full h-80 md:h-96"
+          >
+            {memories.map((memory, index) => (
+              <SwiperSlide key={index} className="flex items-center justify-center">
                 <img
                   src={memory}
                   alt={`Memory ${index + 1}`}
                   className="
                     w-full
-                    max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg
-                    h-auto
-                    max-h-64 sm:max-h-80 md:max-h-96 lg:max-h-[400px]
+                    h-full
                     object-contain
                     rounded-xl
                     shadow-2xl
-                    hover:shadow-3xl
-                    transition-all
-                    duration-500
-                    hover:scale-105
+                    bg-transparent
                   "
                   loading="lazy"
                 />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </motion.div>
 
       <motion.div
