@@ -37,12 +37,14 @@ export default function PhotosScreen({ onNext }) {
           effect={"cards"}
           modules={[EffectCards]}
           grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={1}
           className="mySwiper h-80 md:h-96 lg:h-[500px] !bg-transparent"
         >
           {memories.map((memory, index) => (
             <SwiperSlide
               key={index}
-              className="!bg-transparent !shadow-none"
+              className="!bg-transparent !flex !items-center !justify-center"
             >
               <div className="flex items-center justify-center h-full p-4 md:p-8">
                 <img
