@@ -32,13 +32,13 @@ export default function PhotosScreen({ onNext }) {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="max-w-4xl mx-auto mb-12"
+        className="max-w-3xl mx-auto mb-12"
       >
         <Swiper
           effect={"cards"}
           modules={[EffectCards]}
           grabCursor={true}
-          className="mySwiper h-96 md:h-[500px] lg:h-[600px]"
+          className="mySwiper h-80 md:h-96 lg:h-[500px]"
         >
           {memories.map((memory, index) => (
             <SwiperSlide key={index}>
@@ -46,7 +46,19 @@ export default function PhotosScreen({ onNext }) {
                 <img 
                   src={memory}
                   alt={`Memory ${index + 1}`}
-                  className="w-auto h-auto max-w-full max-h-[95%] object-contain rounded-xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105"
+                  className="
+                    w-full
+                    max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg
+                    h-auto
+                    max-h-64 sm:max-h-80 md:max-h-96 lg:max-h-[400px]
+                    object-contain
+                    rounded-xl
+                    shadow-2xl
+                    hover:shadow-3xl
+                    transition-all
+                    duration-500
+                    hover:scale-105
+                  "
                   loading="lazy"
                 />
               </div>
