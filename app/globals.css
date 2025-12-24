@@ -147,4 +147,10 @@ button { cursor: pointer; }
 }
 
 }
+.mySwiper,
+.mySwiper .swiper-wrapper,
+.mySwiper .swiper-slide {
+  margin: 0 auto;
+}
+
 
