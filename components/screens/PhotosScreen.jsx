@@ -17,7 +17,7 @@ export default function PhotosScreen({ onNext }) {
   return (
     <div className="px-4 md:px-6 py-10 text-center relative min-h-screen flex flex-col justify-center">
       <motion.h1
-        className="text-4xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-transparent mb-12 drop-shadow-2xl leading-tight"
+        className="text-4xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r from-pink-400 via-fuchsia-400 to-violet-400 bg-clip-text text-transparent mb-10 drop-shadow-2xl leading-tight"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -25,31 +25,28 @@ export default function PhotosScreen({ onNext }) {
         Our Memories 💖
       </motion.h1>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        className="w-full flex justify-center mb-12"
-      >
-        <div className="w-full max-w-sm sm:max-w-md md:max-w-lg">
+      {/* IMAGE AREA – PURE CENTER */}
+      <div className="flex justify-center mb-10">
+        <div className="w-full max-w-xs sm:max-w-sm md:max-w-md">
           <Swiper
             slidesPerView={1}
-            spaceBetween={16}
-            grabCursor={true}
-            className="w-full h-80 md:h-96"
+            spaceBetween={8}
+            className="w-full h-72 sm:h-80 md:h-96"
           >
             {memories.map((memory, index) => (
-              <SwiperSlide key={index} className="flex items-center justify-center">
+              <SwiperSlide
+                key={index}
+                className="flex items-center justify-center"
+              >
                 <img
                   src={memory}
                   alt={`Memory ${index + 1}`}
                   className="
                     w-full
                     h-full
-                    object-contain
-                    rounded-xl
+                    object-cover
+                    rounded-2xl
                     shadow-2xl
-                    bg-transparent
                   "
                   loading="lazy"
                 />
@@ -57,17 +54,17 @@ export default function PhotosScreen({ onNext }) {
             ))}
           </Swiper>
         </div>
-      </motion.div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
         className="flex justify-center"
       >
-        <GradientButton onClick={onNext} className="text-xl px-10 py-5 shadow-2xl">
+        <GradientButton onClick={onNext} className="text-lg px-10 py-4 shadow-2xl">
           Special Message 💌
-          <ArrowRight size={24} className="mt-0.5 ml-3" />
+          <ArrowRight size={22} className="mt-0.5 ml-3" />
         </GradientButton>
       </motion.div>
     </div>
